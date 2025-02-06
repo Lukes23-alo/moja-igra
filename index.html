@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Igra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Form -->
+  <div id="login-form">
+    <h2>Prijavi se</h2>
+    <input type="text" id="login-username" placeholder="Korisničko ime" required>
+    <input type="password" id="login-password" placeholder="Lozinka" required>
+    <button onclick="login()">Prijavi se</button>
+    <p>Nemate nalog? <a href="javascript:showRegister()">Registrujte se</a></p>
+  </div>
+
+  <!-- Register Form -->
+  <div id="register-form" class="hidden">
+    <h2>Registrujte se</h2>
+    <input type="text" id="register-username" placeholder="Korisničko ime" required>
+    <input type="password" id="register-password" placeholder="Lozinka" required>
+    <button onclick="register()">Registrujte se</button>
+    <p>Već imate nalog? <a href="javascript:showLogin()">Prijavite se</a></p>
+  </div>
+
+  <!-- Game Menu -->
+  <div id="game-menu" class="hidden">
+    <h3>Dobrodošli, <span id="user-name"></span>!</h3>
+    <button onclick="startGame()">Kreni da igraš</button>
+  </div>
+
+  <!-- Game Area -->
+  <div id="game-container" class="hidden">
+    <h3 id="gameHeader">Igra</h3>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="scoreContainer">Poeni: 0</div>
+    <div id="gameOverMenu" class="hidden">
+      <h2>Kraj igre</h2>
+      <p id="finalScore"></p>
+      <button onclick="playAgain()">Igraj ponovo</button>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div id="notification" class="hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
